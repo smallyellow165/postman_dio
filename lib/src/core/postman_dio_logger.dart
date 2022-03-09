@@ -56,6 +56,10 @@ class PostmanDioLogger extends Interceptor {
     return postmanCollection.toJson();
   }
 
+  static Future<void> clear() async {
+    postmanCollection.item!.clear();
+  }
+  
   @override
   Future<void> onRequest(RequestOptions options, RequestInterceptorHandler? handler) async {
     if (!enabled) {
